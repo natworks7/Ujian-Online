@@ -1,0 +1,231 @@
+body, h1, h2, ul, li, p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2{
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.admin-panel {
+  display: flex;
+  height: 100vh;
+}
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  display: block;
+  height: 3px;
+  background-color: black;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.sidebar {
+  background-color: #ff6600;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem 1rem;
+  transition: width 0.3s ease;
+  height: 100%;
+  position: fixed;
+}
+
+.sidebar h2 {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.sidebar ul {
+  list-style: none;
+  width: 90%;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+  width: 90%;
+  margin-right: 15px;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  background: white;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: normal;
+  transition: background 0.3s ease, font-weight 0.3s ease;
+}
+
+.sidebar a.active {
+  background: #f2d4b7;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  background: #ffe6cc;
+}
+
+.top-navbar {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d1d1d1;
+  color: black;
+  padding: 0.5rem 1rem; 
+  border-bottom: 1px solid #000000;
+}
+
+
+.top-navbar .logo h1 {
+  font-size: 1.2rem; 
+}
+
+.top-navbar .account img {
+  width: 25px; 
+  height: 25px;
+  margin-right: 40px;
+}
+
+.content {
+  flex: 1;
+  padding: 3.5rem 2rem; 
+  margin-left: 270px;
+}
+
+.main-content h2 {
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  border: 1px solid #ddd; 
+}
+
+thead {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+thead th {
+  text-align: left;
+  padding: 12px 8px;
+  border: 1px solid #ddd; 
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table-container {
+  overflow-x: auto; /* Tambahkan scroll horizontal jika tabel terlalu lebar */
+}
+
+thead th, tbody td {
+  padding: 8px; /* Atur padding untuk memberikan lebih banyak ruang */
+  word-wrap: break-word; /* Potong kata panjang agar tidak merusak layout */
+}
+
+
+tbody td {
+  padding: 10px 8px;
+  text-align: left;
+  border: 1px solid #ddd; 
+}
+
+tbody td:first-child {
+  text-align: center;
+}
+
+/* Tampilkan hamburger pada tampilan mobile */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+    left: 10px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    z-index: 1000;
+    transform: translateX(-100%);
+    background-color: #ff6600;
+    padding: 1.5rem 1rem;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .top-navbar {
+    justify-content: flex-start;
+    position: fixed;
+  }
+
+  .logo{
+    text-align: center;
+    flex:1;
+  }
+  .account{
+    margin-left: auto;
+  }
+
+  .content {
+    flex: 1;
+    padding: 3.5rem 2rem; 
+    margin-left: auto;
+  }
+}
+
+.footer {
+  background-color: #000080;
+  height: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

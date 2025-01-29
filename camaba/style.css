@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: auto;
+    background-color: #f8f9fa;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+        display: flex;
+        width: 80%;
+    }
+    
+.sidebar {
+    width: 250px;
+    background-color: #ff6600;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #ddd;
+    padding-top: 4rem;
+    padding: 3.5rem 1rem;
+}
+
+.logo {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.menu ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .menu ul li {
+        margin: 20px 0;
+        text-align: center;
+    }
+    
+    .menu ul li a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+        padding: 20px;
+        font-size: 18px;
+        border: 1px solid #333; /*nNoteeeee: ini itu Menambahkan garis tepi */
+        border-radius: 5px; /*Noteeee: ini menambahkan sudut yang sedikit melengkung */
+        transition: background-color 0.3s ease, border-color 0.3s ease; /*Noteee: Animasi perubahan warna */
+    }
+
+    .menu ul li a img {
+        width: 40px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+.menu ul li a:hover,
+.menu ul li a.active {
+    background-color: #d35400;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 3.5rem 2rem;
+    margin-top: 30px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.account img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.exam-menu {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.exam-card {
+    width: 270px;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    transition: box-shadow 0.3s ease;
+}
+
+.exam-card:hover {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.exam-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.exam-card button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.exam-card button:hover {
+    background-color: #d35400;
+}
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  display: block;
+  height: 3px;
+  background-color: black;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.top-navbar {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d1d1d1;
+  color: black;
+  padding: 0.5rem 1rem; 
+  border-bottom: 1px solid #000000;
+}
+
+
+.top-navbar .logo h1 {
+  font-size: 1.2rem; 
+}
+
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+    left: 10px;
+  }
+
+  .exam-menu {
+    display: flex; /* Ubah menjadi flex untuk kontrol yang lebih baik */
+    flex-direction: column; /* Mengatur elemen anak dalam kolom */
+    gap: 40px; /* Jarak antar elemen */
+    align-items: center; /* Pusatkan elemen */
+  }
+
+  .exam-card {
+    width: 60%; /* Sesuaikan lebar dengan layar */
+  }
+
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    z-index: 1000;
+    transform: translateX(-100%);
+    background-color: #ff6600;
+    padding: 1.5rem 1rem;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .top-navbar {
+    justify-content: flex-start;
+    position: fixed;
+  }
+
+  .logo{
+    text-align: center;
+    flex:1;
+  }
+  .account{
+    margin-left:auto;
+  }
+
+  .content {
+    flex: 1;
+    padding: 3.5rem 2rem; 
+    margin-left: auto;
+  }
+}
+
+.footer {
+        background-color: #000080;
+        height: 10px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
